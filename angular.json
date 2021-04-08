@@ -125,6 +125,46 @@
           }
         }
       }
+    },
+    "ngx-sow-library": {
+      "projectType": "library",
+      "root": "projects/ngx-sow-library",
+      "sourceRoot": "projects/ngx-sow-library/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "tsConfig": "projects/ngx-sow-library/tsconfig.lib.json",
+            "project": "projects/ngx-sow-library/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ngx-sow-library/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ngx-sow-library/src/test.ts",
+            "tsConfig": "projects/ngx-sow-library/tsconfig.spec.json",
+            "karmaConfig": "projects/ngx-sow-library/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ngx-sow-library/tsconfig.lib.json",
+              "projects/ngx-sow-library/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "supreme-octo-waffle"
