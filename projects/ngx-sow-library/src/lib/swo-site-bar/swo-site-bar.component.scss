@@ -1,0 +1,39 @@
+.site-bar {
+  background-color: #222d3a;
+  color: white;
+
+  &__container {
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__title {
+    text-transform: uppercase;
+  }
+
+  &__desc {
+    text-transform: capitalize;
+    text-align: right;
+  }
+}
+
+.ui-container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media (min-width: 768px) {
+  .ui-container {
+    width: 750px;
+  }
+}
+
+@media (min-width: 992px) {
+  .ui-container {
+    width: 970px;
+  }
+}
