@@ -12,7 +12,8 @@ import { CardComponent } from './card/card.component';
   imports: [
   ],
   exports: [
-    NgxSowLibraryComponent
+    NgxSowLibraryComponent,
+    CardComponent
   ]
 })
 export class NgxSowLibraryModule { }
