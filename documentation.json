@@ -766,17 +766,17 @@
                 "name": "environment",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/custom-elements/src/environments/environment.ts",
+                "file": "projects/custom-elements/src/environments/environment.prod.ts",
                 "type": "object",
-                "defaultValue": "{\n  production: false\n}"
+                "defaultValue": "{\n  production: true\n}"
             },
             {
                 "name": "environment",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/custom-elements/src/environments/environment.prod.ts",
+                "file": "projects/custom-elements/src/environments/environment.ts",
                 "type": "object",
-                "defaultValue": "{\n  production: true\n}"
+                "defaultValue": "{\n  production: false\n}"
             },
             {
                 "name": "Large",
@@ -868,14 +868,6 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/Card.stories.ts",
-                "type": "Story<CardComponent>",
-                "defaultValue": "(args) => ({\n    props: args\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/stories/Button.stories.ts",
                 "type": "Story<Button>",
                 "defaultValue": "(args: Button) => ({\n  props: args,\n})"
@@ -892,14 +884,6 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/SiteBar.stories.ts",
-                "type": "Story<SwoSiteBarComponent>",
-                "defaultValue": "(args) => ({\n    props: args\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/stories/Page.stories.ts",
                 "type": "Story<Page>",
                 "defaultValue": "(args: Page) => ({\n  props: args,\n})"
@@ -908,8 +892,24 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/stories/SiteBar.stories.ts",
+                "type": "Story<SwoSiteBarComponent>",
+                "defaultValue": "(args) => ({\n    props: args\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/stories/SiteMain.stories.ts",
                 "type": "Story<SwoSiteMainComponent>",
+                "defaultValue": "(args) => ({\n  props: args\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Card.stories.ts",
+                "type": "Story<CardComponent>",
                 "defaultValue": "(args) => ({\n    props: args\n})"
             }
         ],
@@ -1010,7 +1010,7 @@
                     "subtype": "variable",
                     "file": "src/stories/SiteMain.stories.ts",
                     "type": "Story<SwoSiteMainComponent>",
-                    "defaultValue": "(args) => ({\n    props: args\n})"
+                    "defaultValue": "(args) => ({\n  props: args\n})"
                 }
             ],
             "src/environments/environment.prod.ts": [
@@ -1033,16 +1033,6 @@
                     "defaultValue": "{\n  production: false\n}"
                 }
             ],
-            "projects/custom-elements/src/environments/environment.ts": [
-                {
-                    "name": "environment",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/custom-elements/src/environments/environment.ts",
-                    "type": "object",
-                    "defaultValue": "{\n  production: false\n}"
-                }
-            ],
             "projects/custom-elements/src/environments/environment.prod.ts": [
                 {
                     "name": "environment",
@@ -1051,6 +1041,16 @@
                     "file": "projects/custom-elements/src/environments/environment.prod.ts",
                     "type": "object",
                     "defaultValue": "{\n  production: true\n}"
+                }
+            ],
+            "projects/custom-elements/src/environments/environment.ts": [
+                {
+                    "name": "environment",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/custom-elements/src/environments/environment.ts",
+                    "type": "object",
+                    "defaultValue": "{\n  production: false\n}"
                 }
             ],
             "src/stories/Button.stories.ts": [
