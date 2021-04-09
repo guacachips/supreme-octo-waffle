@@ -1,0 +1,9 @@
+<div class="user-list">
+  <lib-user-card
+    *ngFor="let user of users"
+    [picture]="user.picture"
+    [name]="user.name"
+    [description]="user.description"
+    [skills]="user.skills"
+  ></lib-user-card>
+</div>

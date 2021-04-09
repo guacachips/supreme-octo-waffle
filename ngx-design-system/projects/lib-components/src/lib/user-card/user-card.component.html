@@ -1,0 +1,10 @@
+<lib-card class="user-card">
+  <img class="user-card__picture" [src]="picture" alt="user picture">
+  <div class="user-card__container">
+    <lib-subtitle [subtitle]="description"></lib-subtitle>
+    <lib-title [title]="name"></lib-title>
+    <div class="user-card__skills">
+      <lib-chip *ngFor="let skill of skills" [content]="skill"></lib-chip>
+    </div>
+  </div>
+</lib-card>
