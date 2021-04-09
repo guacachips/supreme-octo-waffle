@@ -892,7 +892,7 @@
                 "name": "context",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/lib-elements/src/test.ts",
+                "file": "projects/lib-components/src/test.ts",
                 "type": "",
                 "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
             },
@@ -900,7 +900,7 @@
                 "name": "context",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/lib-components/src/test.ts",
+                "file": "projects/lib-elements/src/test.ts",
                 "type": "",
                 "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
             },
@@ -956,17 +956,17 @@
                 "name": "environment",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/compiler/src/environments/environment.prod.ts",
+                "file": "projects/compiler/src/environments/environment.ts",
                 "type": "object",
-                "defaultValue": "{\n  production: true\n}"
+                "defaultValue": "{\n  production: false\n}"
             },
             {
                 "name": "environment",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/compiler/src/environments/environment.ts",
+                "file": "projects/compiler/src/environments/environment.prod.ts",
                 "type": "object",
-                "defaultValue": "{\n  production: false\n}"
+                "defaultValue": "{\n  production: true\n}"
             },
             {
                 "name": "Large",
@@ -1035,14 +1035,14 @@
                 "name": "require",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/lib-elements/src/test.ts",
+                "file": "projects/lib-components/src/test.ts",
                 "type": "literal type"
             },
             {
                 "name": "require",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/lib-components/src/test.ts",
+                "file": "projects/lib-elements/src/test.ts",
                 "type": "literal type"
             },
             {
@@ -1113,16 +1113,16 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/Title.stories.ts",
-                "type": "Story<TitleComponent>",
-                "defaultValue": "(args) => ({\n    props: args\n})"
+                "file": "src/stories/UserCard.stories.ts",
+                "type": "Story<UserCardComponent>",
+                "defaultValue": "(args) => ({\n    props: args,\n    moduleMetadata: {\n      declarations: [ \n        UserCardComponent,\n        CardComponent,\n        SubtitleComponent,\n        TitleComponent,\n        ChipComponent\n      ]\n    }\n})"
             },
             {
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/UserCard.stories.ts",
-                "type": "Story<UserCardComponent>",
+                "file": "src/stories/Title.stories.ts",
+                "type": "Story<TitleComponent>",
                 "defaultValue": "(args) => ({\n    props: args\n})"
             },
             {
@@ -1161,7 +1161,7 @@
                     "subtype": "variable",
                     "file": "src/stories/UserCard.stories.ts",
                     "type": "Story<UserCardComponent>",
-                    "defaultValue": "(args) => ({\n    props: args\n})"
+                    "defaultValue": "(args) => ({\n    props: args,\n    moduleMetadata: {\n      declarations: [ \n        UserCardComponent,\n        CardComponent,\n        SubtitleComponent,\n        TitleComponent,\n        ChipComponent\n      ]\n    }\n})"
                 }
             ],
             "projects/compiler/src/test.ts": [
@@ -1181,23 +1181,6 @@
                     "type": "literal type"
                 }
             ],
-            "projects/lib-elements/src/test.ts": [
-                {
-                    "name": "context",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/lib-elements/src/test.ts",
-                    "type": "",
-                    "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
-                },
-                {
-                    "name": "require",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/lib-elements/src/test.ts",
-                    "type": "literal type"
-                }
-            ],
             "projects/lib-components/src/test.ts": [
                 {
                     "name": "context",
@@ -1212,6 +1195,23 @@
                     "ctype": "miscellaneous",
                     "subtype": "variable",
                     "file": "projects/lib-components/src/test.ts",
+                    "type": "literal type"
+                }
+            ],
+            "projects/lib-elements/src/test.ts": [
+                {
+                    "name": "context",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/lib-elements/src/test.ts",
+                    "type": "",
+                    "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
+                },
+                {
+                    "name": "require",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/lib-elements/src/test.ts",
                     "type": "literal type"
                 }
             ],
@@ -1313,16 +1313,6 @@
                     "defaultValue": "(args) => ({\n    props: args\n})"
                 }
             ],
-            "projects/compiler/src/environments/environment.prod.ts": [
-                {
-                    "name": "environment",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/compiler/src/environments/environment.prod.ts",
-                    "type": "object",
-                    "defaultValue": "{\n  production: true\n}"
-                }
-            ],
             "projects/compiler/src/environments/environment.ts": [
                 {
                     "name": "environment",
@@ -1331,6 +1321,16 @@
                     "file": "projects/compiler/src/environments/environment.ts",
                     "type": "object",
                     "defaultValue": "{\n  production: false\n}"
+                }
+            ],
+            "projects/compiler/src/environments/environment.prod.ts": [
+                {
+                    "name": "environment",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/compiler/src/environments/environment.prod.ts",
+                    "type": "object",
+                    "defaultValue": "{\n  production: true\n}"
                 }
             ],
             "src/stories/Button.stories.ts": [

@@ -7,6 +7,12 @@ import { CardComponent, ChipComponent, TitleComponent, SubtitleComponent } from 
 export default {
     title: 'Components/UserCardComponent',
     component: UserCardComponent,
+    subcomponents: { 
+      CardComponent,
+      SubtitleComponent,
+      TitleComponent,
+      ChipComponent
+    },
     decorators: [
         moduleMetadata({
           declarations: [
