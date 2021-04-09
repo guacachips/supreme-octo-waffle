@@ -1,0 +1,12 @@
+.chip {
+  display: inline-block;
+  max-width: 70%;
+  padding: 6px 12px;
+  border-radius: 16px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  background-color: #bcebe0;
+  font-family: 'Helvetica';
+  font-size: 14px;
+}
