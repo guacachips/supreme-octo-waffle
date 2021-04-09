@@ -1,5 +1,6 @@
 import { Meta, moduleMetadata, Story } from '@storybook/angular';
 import { UserListComponent, UserCardComponent } from 'projects/lib-components/src/public-api';
+import { CardComponent, ChipComponent, SubtitleComponent, TitleComponent } from 'projects/lib-elements/src/public-api';
 import * as UserCardStories from './UserCard.stories';
 
 
@@ -12,7 +13,11 @@ export default {
     decorators: [
       moduleMetadata({
         declarations: [
-          UserCardComponent
+          UserCardComponent,
+          CardComponent,
+          SubtitleComponent,
+          TitleComponent,
+          ChipComponent
         ]
       })
     ]
