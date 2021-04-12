@@ -1,9 +1,10 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'lib-subtitle',
   templateUrl: './subtitle.component.html',
-  styleUrls: ['./subtitle.component.scss']
+  styleUrls: ['./subtitle.component.scss'],
+  encapsulation: ViewEncapsulation.ShadowDom
 })
 export class SubtitleComponent implements OnInit {
 

@@ -17,25 +17,66 @@
                 "line": 6
             },
             "type": "injectable"
-        },
+        }
+    ],
+    "classes": [
         {
-            "name": "LibElementsService",
-            "id": "injectable-LibElementsService-8c106ab3e46378dc0f1cf6805b223ec3",
-            "file": "projects/lib-elements/src/lib/lib-elements.service.ts",
-            "properties": [],
-            "methods": [],
-            "description": "",
-            "sourceCode": "import { Injectable } from '@angular/core';\n\n@Injectable({\n  providedIn: 'root'\n})\nexport class LibElementsService {\n\n  constructor() { }\n}\n",
+            "name": "CustomElementModule",
+            "id": "class-CustomElementModule-e8bba013bbd4f9182979ba7c40c083d4",
+            "file": "projects/lib-elements/src/lib/classes/custom-element-module.ts",
+            "type": "class",
+            "sourceCode": "import { Injector } from \"@angular/core\";\nimport { createCustomElement } from \"@angular/elements\";\n\nexport abstract class CustomElementModule {\n  constructor(injector: Injector, component: InstanceType<any>, name: string) {\n    const ngElement = createCustomElement(component, {injector})\n    // customElements.define(`${MY_PREFIX}-${name}`, ngElement);\n    customElements.define(name, ngElement);\n  }\n}",
             "constructorObj": {
                 "name": "constructor",
                 "description": "",
-                "args": [],
-                "line": 6
+                "args": [
+                    {
+                        "name": "injector",
+                        "type": "Injector"
+                    },
+                    {
+                        "name": "component",
+                        "type": "InstanceType<any>"
+                    },
+                    {
+                        "name": "name",
+                        "type": "string"
+                    }
+                ],
+                "line": 4,
+                "jsdoctags": [
+                    {
+                        "name": "injector",
+                        "type": "Injector",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    },
+                    {
+                        "name": "component",
+                        "type": "InstanceType<any>",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    },
+                    {
+                        "name": "name",
+                        "type": "string",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
             },
-            "type": "injectable"
+            "properties": [],
+            "methods": [],
+            "indexSignatures": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "hostBindings": [],
+            "hostListeners": []
         }
     ],
-    "classes": [],
     "directives": [],
     "components": [
         {
@@ -122,7 +163,7 @@
         {
             "name": "CardComponent",
             "id": "component-CardComponent-c29b9e9eccb4387df4a50f3f93e4cc03",
-            "file": "projects/lib-elements/src/lib/card/card.component.ts",
+            "file": "projects/lib-elements/src/lib/components/card/card.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -173,12 +214,12 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<div class=\"card\">\n  <ng-content></ng-content>\n</div>"
+            "templateData": "<!-- <div class=\"card\">\n  <ng-content></ng-content>\n</div> -->\n"
         },
         {
             "name": "ChipComponent",
             "id": "component-ChipComponent-c661ece6ba33436ee625a16ea32c19d1",
-            "file": "projects/lib-elements/src/lib/chip/chip.component.ts",
+            "file": "projects/lib-elements/src/lib/components/chip/chip.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -348,53 +389,6 @@
             ]
         },
         {
-            "name": "LibElementsComponent",
-            "id": "component-LibElementsComponent-98b2007d704ef507073b77b8013f89f9",
-            "file": "projects/lib-elements/src/lib/lib-elements.component.ts",
-            "encapsulation": [],
-            "entryComponents": [],
-            "inputs": [],
-            "outputs": [],
-            "providers": [],
-            "selector": "lib-lib-elements",
-            "styleUrls": [],
-            "styles": [],
-            "template": "<p>\n  lib-elements works!\n</p>\n",
-            "templateUrl": [],
-            "viewProviders": [],
-            "inputsClass": [],
-            "outputsClass": [],
-            "propertiesClass": [],
-            "methodsClass": [
-                {
-                    "name": "ngOnInit",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 17
-                }
-            ],
-            "hostBindings": [],
-            "hostListeners": [],
-            "description": "",
-            "rawdescription": "",
-            "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'lib-lib-elements',\n  template: `\n    <p>\n      lib-elements works!\n    </p>\n  `,\n  styles: [\n  ]\n})\nexport class LibElementsComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
-            "assetsDirs": [],
-            "styleUrlsData": "",
-            "stylesData": "",
-            "constructorObj": {
-                "name": "constructor",
-                "description": "",
-                "args": [],
-                "line": 13
-            },
-            "implements": [
-                "OnInit"
-            ]
-        },
-        {
             "name": "PageComponent",
             "id": "component-PageComponent-8f196770333aa216860a88c0b6b221aa",
             "file": "src/stories/page.component.ts",
@@ -458,9 +452,11 @@
         },
         {
             "name": "SubtitleComponent",
-            "id": "component-SubtitleComponent-cb25ceb998c9327fc30274436a06d1ff",
-            "file": "projects/lib-elements/src/lib/subtitle/subtitle.component.ts",
-            "encapsulation": [],
+            "id": "component-SubtitleComponent-520731663e554cfbce52494de27c5487",
+            "file": "projects/lib-elements/src/lib/components/subtitle/subtitle.component.ts",
+            "encapsulation": [
+                "ViewEncapsulation.ShadowDom"
+            ],
             "entryComponents": [],
             "inputs": [],
             "outputs": [],
@@ -478,7 +474,7 @@
                 {
                     "name": "subtitle",
                     "defaultValue": "'subtitle'",
-                    "line": 10,
+                    "line": 11,
                     "type": "string"
                 }
             ],
@@ -491,7 +487,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 14
+                    "line": 15
                 }
             ],
             "hostBindings": [],
@@ -499,7 +495,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'lib-subtitle',\n  templateUrl: './subtitle.component.html',\n  styleUrls: ['./subtitle.component.scss']\n})\nexport class SubtitleComponent implements OnInit {\n\n  @Input() subtitle: string = 'subtitle';\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "sourceCode": "import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';\n\n@Component({\n  selector: 'lib-subtitle',\n  templateUrl: './subtitle.component.html',\n  styleUrls: ['./subtitle.component.scss'],\n  encapsulation: ViewEncapsulation.ShadowDom\n})\nexport class SubtitleComponent implements OnInit {\n\n  @Input() subtitle: string = 'subtitle';\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -512,7 +508,7 @@
                 "name": "constructor",
                 "description": "",
                 "args": [],
-                "line": 10
+                "line": 11
             },
             "implements": [
                 "OnInit"
@@ -522,7 +518,7 @@
         {
             "name": "TitleComponent",
             "id": "component-TitleComponent-5d2426c0fc4262bed47a2155484b00ed",
-            "file": "projects/lib-elements/src/lib/title/title.component.ts",
+            "file": "projects/lib-elements/src/lib/components/title/title.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -661,7 +657,7 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<lib-card class=\"user-card\">\n  <img class=\"user-card__picture\" [src]=\"picture\" alt=\"user picture\">\n  <div class=\"user-card__container\">\n    <lib-subtitle [subtitle]=\"description\"></lib-subtitle>\n    <lib-title [title]=\"name\"></lib-title>\n    <div class=\"user-card__skills\">\n      <lib-chip *ngFor=\"let skill of skills\" [content]=\"skill\"></lib-chip>\n    </div>\n  </div>\n</lib-card>"
+            "templateData": "<!-- <lib-card class=\"user-card\">\n  <img class=\"user-card__picture\" [src]=\"picture\" alt=\"user picture\">\n  <div class=\"user-card__container\">\n    <lib-subtitle [subtitle]=\"description\"></lib-subtitle>\n    <lib-title [title]=\"name\"></lib-title>\n    <div class=\"user-card__skills\">\n      <lib-chip *ngFor=\"let skill of skills\" [content]=\"skill\"></lib-chip>\n    </div>\n  </div>\n</lib-card> -->"
         },
         {
             "name": "UserListComponent",
@@ -762,6 +758,80 @@
             ]
         },
         {
+            "name": "CardModule",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "CardComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "CardComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "ChipModule",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "ChipComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "ChipComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
             "name": "LibComponentsModule",
             "children": [
                 {
@@ -817,19 +887,86 @@
                 },
                 {
                     "type": "declarations",
+                    "elements": []
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
                     "elements": [
                         {
-                            "name": "CardComponent"
+                            "name": "CardModule"
                         },
                         {
-                            "name": "ChipComponent"
+                            "name": "ChipModule"
                         },
                         {
-                            "name": "LibElementsComponent"
+                            "name": "SubtitleModule"
                         },
+                        {
+                            "name": "TitleModule"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "SubtitleModule",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
                         {
                             "name": "SubtitleComponent"
-                        },
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "SubtitleComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "TitleModule",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
                         {
                             "name": "TitleComponent"
                         }
@@ -842,18 +979,6 @@
                 {
                     "type": "exports",
                     "elements": [
-                        {
-                            "name": "CardComponent"
-                        },
-                        {
-                            "name": "ChipComponent"
-                        },
-                        {
-                            "name": "LibElementsComponent"
-                        },
-                        {
-                            "name": "SubtitleComponent"
-                        },
                         {
                             "name": "TitleComponent"
                         }
@@ -873,22 +998,6 @@
     "miscellaneous": {
         "variables": [
             {
-                "name": "BrendanEich",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/UserCard.stories.ts",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "context",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/lib-components/src/test.ts",
-                "type": "",
-                "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
-            },
-            {
                 "name": "context",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -901,6 +1010,14 @@
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "projects/lib-elements/src/test.ts",
+                "type": "",
+                "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
+            },
+            {
+                "name": "context",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/lib-components/src/test.ts",
                 "type": "",
                 "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
             },
@@ -929,26 +1046,10 @@
                 "defaultValue": "Template.bind({})"
             },
             {
-                "name": "Default",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/UserList.stories.ts",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
                 "name": "DefaultCard",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/stories/Card.stories.ts",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "DefaultCard",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/UserCard.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -1009,27 +1110,12 @@
                 "defaultValue": "Template.bind({})"
             },
             {
-                "name": "OneUser",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/UserList.stories.ts",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
                 "name": "Primary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/stories/Button.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "require",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/lib-components/src/test.ts",
-                "type": "literal type"
             },
             {
                 "name": "require",
@@ -1043,6 +1129,13 @@
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "projects/lib-elements/src/test.ts",
+                "type": "literal type"
+            },
+            {
+                "name": "require",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/lib-components/src/test.ts",
                 "type": "literal type"
             },
             {
@@ -1065,14 +1158,6 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/Button.stories.ts",
-                "type": "Story<Button>",
-                "defaultValue": "(args: Button) => ({\n  props: args,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/stories/Card.stories.ts",
                 "type": "Story<CardComponent>",
                 "defaultValue": "(args) => ({\n    props: args\n})"
@@ -1081,9 +1166,9 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/Chip.stories.ts",
-                "type": "Story<ChipComponent>",
-                "defaultValue": "(args) => ({\n    props: args\n})"
+                "file": "src/stories/Button.stories.ts",
+                "type": "Story<Button>",
+                "defaultValue": "(args: Button) => ({\n  props: args,\n})"
             },
             {
                 "name": "Template",
@@ -1097,9 +1182,9 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/Page.stories.ts",
-                "type": "Story<Page>",
-                "defaultValue": "(args: Page) => ({\n  props: args,\n})"
+                "file": "src/stories/Chip.stories.ts",
+                "type": "Story<ChipComponent>",
+                "defaultValue": "(args) => ({\n    props: args\n})"
             },
             {
                 "name": "Template",
@@ -1121,66 +1206,15 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/UserCard.stories.ts",
-                "type": "Story<UserCardComponent>",
-                "defaultValue": "(args) => ({\n    props: args\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/UserList.stories.ts",
-                "type": "Story<UserListComponent>",
-                "defaultValue": "(args) => ({\n    props: args,\n    moduleMetadata: {\n      declarations: [ UserListComponent, UserCardComponent ]\n    }\n})"
+                "file": "src/stories/Page.stories.ts",
+                "type": "Story<Page>",
+                "defaultValue": "(args: Page) => ({\n  props: args,\n})"
             }
         ],
         "functions": [],
         "typealiases": [],
         "enumerations": [],
         "groupedVariables": {
-            "src/stories/UserCard.stories.ts": [
-                {
-                    "name": "BrendanEich",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/UserCard.stories.ts",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "DefaultCard",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/UserCard.stories.ts",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/UserCard.stories.ts",
-                    "type": "Story<UserCardComponent>",
-                    "defaultValue": "(args) => ({\n    props: args\n})"
-                }
-            ],
-            "projects/lib-components/src/test.ts": [
-                {
-                    "name": "context",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/lib-components/src/test.ts",
-                    "type": "",
-                    "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
-                },
-                {
-                    "name": "require",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/lib-components/src/test.ts",
-                    "type": "literal type"
-                }
-            ],
             "projects/compiler/src/test.ts": [
                 {
                     "name": "context",
@@ -1212,6 +1246,23 @@
                     "ctype": "miscellaneous",
                     "subtype": "variable",
                     "file": "projects/lib-elements/src/test.ts",
+                    "type": "literal type"
+                }
+            ],
+            "projects/lib-components/src/test.ts": [
+                {
+                    "name": "context",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/lib-components/src/test.ts",
+                    "type": "",
+                    "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
+                },
+                {
+                    "name": "require",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/lib-components/src/test.ts",
                     "type": "literal type"
                 }
             ],
@@ -1267,32 +1318,6 @@
                     "file": "src/stories/Title.stories.ts",
                     "type": "Story<TitleComponent>",
                     "defaultValue": "(args) => ({\n    props: args\n})"
-                }
-            ],
-            "src/stories/UserList.stories.ts": [
-                {
-                    "name": "Default",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/UserList.stories.ts",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "OneUser",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/UserList.stories.ts",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/UserList.stories.ts",
-                    "type": "Story<UserListComponent>",
-                    "defaultValue": "(args) => ({\n    props: args,\n    moduleMetadata: {\n      declarations: [ UserListComponent, UserCardComponent ]\n    }\n})"
                 }
             ],
             "src/stories/Card.stories.ts": [
@@ -1434,7 +1459,7 @@
     },
     "routes": [],
     "coverage": {
-        "count": 1,
+        "count": 2,
         "status": "low",
         "files": [
             {
@@ -1534,7 +1559,16 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/lib-elements/src/lib/card/card.component.ts",
+                "filePath": "projects/lib-elements/src/lib/classes/custom-element-module.ts",
+                "type": "class",
+                "linktype": "classe",
+                "name": "CustomElementModule",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/lib-elements/src/lib/components/card/card.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "CardComponent",
@@ -1543,7 +1577,7 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/lib-elements/src/lib/chip/chip.component.ts",
+                "filePath": "projects/lib-elements/src/lib/components/chip/chip.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "ChipComponent",
@@ -1552,25 +1586,7 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/lib-elements/src/lib/lib-elements.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "LibElementsComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/3",
-                "status": "low"
-            },
-            {
-                "filePath": "projects/lib-elements/src/lib/lib-elements.service.ts",
-                "type": "injectable",
-                "linktype": "injectable",
-                "name": "LibElementsService",
-                "coveragePercent": 0,
-                "coverageCount": "0/2",
-                "status": "low"
-            },
-            {
-                "filePath": "projects/lib-elements/src/lib/subtitle/subtitle.component.ts",
+                "filePath": "projects/lib-elements/src/lib/components/subtitle/subtitle.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "SubtitleComponent",
@@ -1579,7 +1595,7 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/lib-elements/src/lib/title/title.component.ts",
+                "filePath": "projects/lib-elements/src/lib/components/title/title.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "TitleComponent",
@@ -1789,66 +1805,6 @@
             },
             {
                 "filePath": "src/stories/Title.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Template",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/UserCard.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "BrendanEich",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/UserCard.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "DefaultCard",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/UserCard.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Template",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/UserList.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Default",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/UserList.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "OneUser",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/UserList.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
