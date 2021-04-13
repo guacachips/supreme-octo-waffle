@@ -1,22 +1,13 @@
 import { NgModule } from '@angular/core';
-import { LibElementsModule } from 'lib-elements';
-import { LibComponentsComponent } from './lib-components.component';
-import { UserCardComponent } from './user-card/user-card.component';
-import { UserListComponent } from './user-list/user-list.component';
+import { UserCardModule } from './components/user-card/user-card.module';
+import { UserListModule } from './components/user-list/user-list.module';
 
 
 
 @NgModule({
-  declarations: [
-    LibComponentsComponent,
-    UserCardComponent,
-    UserListComponent,
-  ],
-  imports: [
-    LibElementsModule
-  ],
   exports: [
-    LibComponentsComponent
+    UserCardModule,
+    UserListModule
   ]
 })
 export class LibComponentsModule { }

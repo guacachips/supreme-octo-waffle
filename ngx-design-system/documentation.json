@@ -1,31 +1,14 @@
 {
     "pipes": [],
     "interfaces": [],
-    "injectables": [
-        {
-            "name": "LibComponentsService",
-            "id": "injectable-LibComponentsService-939f34dfca901e577b899d80c3898506",
-            "file": "projects/lib-components/src/lib/lib-components.service.ts",
-            "properties": [],
-            "methods": [],
-            "description": "",
-            "sourceCode": "import { Injectable } from '@angular/core';\n\n@Injectable({\n  providedIn: 'root'\n})\nexport class LibComponentsService {\n\n  constructor() { }\n}\n",
-            "constructorObj": {
-                "name": "constructor",
-                "description": "",
-                "args": [],
-                "line": 6
-            },
-            "type": "injectable"
-        }
-    ],
+    "injectables": [],
     "classes": [
         {
             "name": "CustomElementModule",
-            "id": "class-CustomElementModule-e8bba013bbd4f9182979ba7c40c083d4",
-            "file": "projects/lib-elements/src/lib/classes/custom-element-module.ts",
+            "id": "class-CustomElementModule-46b496b611ece2386c5c0fb0bbeac9b7",
+            "file": "projects/lib-components/src/lib/classes/custom-element-module.ts",
             "type": "class",
-            "sourceCode": "import { Injector } from \"@angular/core\";\nimport { createCustomElement } from \"@angular/elements\";\n\nexport abstract class CustomElementModule {\n  constructor(injector: Injector, component: InstanceType<any>, name: string) {\n    const ngElement = createCustomElement(component, {injector})\n    // customElements.define(`${MY_PREFIX}-${name}`, ngElement);\n    customElements.define(name, ngElement);\n  }\n}",
+            "sourceCode": "import { Injector } from \"@angular/core\";\nimport { createCustomElement } from \"@angular/elements\";\n\nexport abstract class CustomElementModule {\n  constructor(injector: Injector, component: InstanceType<any>, name: string) {\n    const ngElement = createCustomElement(component, {injector})\n    customElements.define(name, ngElement);\n  }\n}",
             "constructorObj": {
                 "name": "constructor",
                 "description": "",
@@ -75,6 +58,65 @@
             "outputsClass": [],
             "hostBindings": [],
             "hostListeners": []
+        },
+        {
+            "name": "CustomElementModule",
+            "id": "class-CustomElementModule-46b496b611ece2386c5c0fb0bbeac9b7-1",
+            "file": "projects/lib-elements/src/lib/classes/custom-element-module.ts",
+            "type": "class",
+            "sourceCode": "import { Injector } from \"@angular/core\";\nimport { createCustomElement } from \"@angular/elements\";\n\nexport abstract class CustomElementModule {\n  constructor(injector: Injector, component: InstanceType<any>, name: string) {\n    const ngElement = createCustomElement(component, {injector})\n    customElements.define(name, ngElement);\n  }\n}",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [
+                    {
+                        "name": "injector",
+                        "type": "Injector"
+                    },
+                    {
+                        "name": "component",
+                        "type": "InstanceType<any>"
+                    },
+                    {
+                        "name": "name",
+                        "type": "string"
+                    }
+                ],
+                "line": 4,
+                "jsdoctags": [
+                    {
+                        "name": "injector",
+                        "type": "Injector",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    },
+                    {
+                        "name": "component",
+                        "type": "InstanceType<any>",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    },
+                    {
+                        "name": "name",
+                        "type": "string",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "properties": [],
+            "methods": [],
+            "indexSignatures": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "hostBindings": [],
+            "hostListeners": [],
+            "isDuplicate": true,
+            "duplicateId": 1,
+            "duplicateName": "CustomElementModule-1"
         }
     ],
     "directives": [],
@@ -162,9 +204,11 @@
         },
         {
             "name": "CardComponent",
-            "id": "component-CardComponent-c29b9e9eccb4387df4a50f3f93e4cc03",
+            "id": "component-CardComponent-8e618b36aed0832189d41d40aa8330cf",
             "file": "projects/lib-elements/src/lib/components/card/card.component.ts",
-            "encapsulation": [],
+            "encapsulation": [
+                "ViewEncapsulation.ShadowDom"
+            ],
             "entryComponents": [],
             "inputs": [],
             "outputs": [],
@@ -188,7 +232,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 12
+                    "line": 13
                 }
             ],
             "hostBindings": [],
@@ -196,7 +240,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'lib-card',\n  templateUrl: './card.component.html',\n  styleUrls: ['./card.component.scss']\n})\nexport class CardComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "sourceCode": "import { Component, OnInit, ViewEncapsulation } from '@angular/core';\n\n@Component({\n  selector: 'lib-card',\n  templateUrl: './card.component.html',\n  styleUrls: ['./card.component.scss'],\n  encapsulation: ViewEncapsulation.ShadowDom\n})\nexport class CardComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -209,7 +253,7 @@
                 "name": "constructor",
                 "description": "",
                 "args": [],
-                "line": 8
+                "line": 9
             },
             "implements": [
                 "OnInit"
@@ -218,9 +262,11 @@
         },
         {
             "name": "ChipComponent",
-            "id": "component-ChipComponent-c661ece6ba33436ee625a16ea32c19d1",
+            "id": "component-ChipComponent-5187ca9f32c896c1e589340f59e2845c",
             "file": "projects/lib-elements/src/lib/components/chip/chip.component.ts",
-            "encapsulation": [],
+            "encapsulation": [
+                "ViewEncapsulation.ShadowDom"
+            ],
             "entryComponents": [],
             "inputs": [],
             "outputs": [],
@@ -238,7 +284,7 @@
                 {
                     "name": "content",
                     "defaultValue": "'chip content'",
-                    "line": 10,
+                    "line": 11,
                     "type": "string"
                 }
             ],
@@ -251,7 +297,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 14
+                    "line": 15
                 }
             ],
             "hostBindings": [],
@@ -259,7 +305,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'lib-chip',\n  templateUrl: './chip.component.html',\n  styleUrls: ['./chip.component.scss']\n})\nexport class ChipComponent implements OnInit {\n\n  @Input() content: string = 'chip content';\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "sourceCode": "import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';\n\n@Component({\n  selector: 'lib-chip',\n  templateUrl: './chip.component.html',\n  styleUrls: ['./chip.component.scss'],\n  encapsulation: ViewEncapsulation.ShadowDom\n})\nexport class ChipComponent implements OnInit {\n\n  @Input() content: string = 'chip content';\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -272,7 +318,7 @@
                 "name": "constructor",
                 "description": "",
                 "args": [],
-                "line": 10
+                "line": 11
             },
             "implements": [
                 "OnInit"
@@ -340,53 +386,6 @@
                 }
             ],
             "stylesData": ""
-        },
-        {
-            "name": "LibComponentsComponent",
-            "id": "component-LibComponentsComponent-db5bc030919978ac57592d08b0325dc0",
-            "file": "projects/lib-components/src/lib/lib-components.component.ts",
-            "encapsulation": [],
-            "entryComponents": [],
-            "inputs": [],
-            "outputs": [],
-            "providers": [],
-            "selector": "lib-lib-components",
-            "styleUrls": [],
-            "styles": [],
-            "template": "<p>\n  lib-components works!\n</p>\n",
-            "templateUrl": [],
-            "viewProviders": [],
-            "inputsClass": [],
-            "outputsClass": [],
-            "propertiesClass": [],
-            "methodsClass": [
-                {
-                    "name": "ngOnInit",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 17
-                }
-            ],
-            "hostBindings": [],
-            "hostListeners": [],
-            "description": "",
-            "rawdescription": "",
-            "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'lib-lib-components',\n  template: `\n    <p>\n      lib-components works!\n    </p>\n  `,\n  styles: [\n  ]\n})\nexport class LibComponentsComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
-            "assetsDirs": [],
-            "styleUrlsData": "",
-            "stylesData": "",
-            "constructorObj": {
-                "name": "constructor",
-                "description": "",
-                "args": [],
-                "line": 13
-            },
-            "implements": [
-                "OnInit"
-            ]
         },
         {
             "name": "PageComponent",
@@ -517,9 +516,11 @@
         },
         {
             "name": "TitleComponent",
-            "id": "component-TitleComponent-5d2426c0fc4262bed47a2155484b00ed",
+            "id": "component-TitleComponent-46f774e9442fcf56d3a507ae1f8b956e",
             "file": "projects/lib-elements/src/lib/components/title/title.component.ts",
-            "encapsulation": [],
+            "encapsulation": [
+                "ViewEncapsulation.ShadowDom"
+            ],
             "entryComponents": [],
             "inputs": [],
             "outputs": [],
@@ -537,7 +538,7 @@
                 {
                     "name": "title",
                     "defaultValue": "'title'",
-                    "line": 10,
+                    "line": 11,
                     "type": "string"
                 }
             ],
@@ -550,7 +551,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 14
+                    "line": 15
                 }
             ],
             "hostBindings": [],
@@ -558,7 +559,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'lib-title',\n  templateUrl: './title.component.html',\n  styleUrls: ['./title.component.scss']\n})\nexport class TitleComponent implements OnInit {\n\n  @Input() title: string = 'title';\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "sourceCode": "import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';\n\n@Component({\n  selector: 'lib-title',\n  templateUrl: './title.component.html',\n  styleUrls: ['./title.component.scss'],\n  encapsulation: ViewEncapsulation.ShadowDom\n})\nexport class TitleComponent implements OnInit {\n\n  @Input() title: string = 'title';\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -571,7 +572,7 @@
                 "name": "constructor",
                 "description": "",
                 "args": [],
-                "line": 10
+                "line": 11
             },
             "implements": [
                 "OnInit"
@@ -580,9 +581,11 @@
         },
         {
             "name": "UserCardComponent",
-            "id": "component-UserCardComponent-ba30e41b798f2e81e18ee17ac8b775eb",
-            "file": "projects/lib-components/src/lib/user-card/user-card.component.ts",
-            "encapsulation": [],
+            "id": "component-UserCardComponent-df881bddaee3ee5d110222865e84f04e",
+            "file": "projects/lib-components/src/lib/components/user-card/user-card.component.ts",
+            "encapsulation": [
+                "ViewEncapsulation.ShadowDom"
+            ],
             "entryComponents": [],
             "inputs": [],
             "outputs": [],
@@ -600,25 +603,25 @@
                 {
                     "name": "description",
                     "defaultValue": "'incognito user'",
-                    "line": 11,
+                    "line": 12,
                     "type": "string"
                 },
                 {
                     "name": "name",
                     "defaultValue": "'John DOE'",
-                    "line": 12,
+                    "line": 13,
                     "type": "string"
                 },
                 {
                     "name": "picture",
                     "defaultValue": "'https://bit.ly/3t5HOHz'",
-                    "line": 10,
+                    "line": 11,
                     "type": "string"
                 },
                 {
                     "name": "skills",
                     "defaultValue": "['Skill 1', 'Skill 2']",
-                    "line": 13,
+                    "line": 14,
                     "type": "string[]"
                 }
             ],
@@ -631,7 +634,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 17
+                    "line": 18
                 }
             ],
             "hostBindings": [],
@@ -639,11 +642,11 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'lib-user-card',\n  templateUrl: './user-card.component.html',\n  styleUrls: ['./user-card.component.scss']\n})\nexport class UserCardComponent implements OnInit {\n\n  @Input() picture: string = 'https://bit.ly/3t5HOHz';\n  @Input() description: string = 'incognito user';\n  @Input() name: string = 'John DOE';\n  @Input() skills: string[] = ['Skill 1', 'Skill 2'];\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "sourceCode": "import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';\n\n@Component({\n  selector: 'lib-user-card',\n  templateUrl: './user-card.component.html',\n  styleUrls: ['./user-card.component.scss'],\n  encapsulation: ViewEncapsulation.ShadowDom\n})\nexport class UserCardComponent implements OnInit {\n\n  @Input() picture: string = 'https://bit.ly/3t5HOHz';\n  @Input() description: string = 'incognito user';\n  @Input() name: string = 'John DOE';\n  @Input() skills: string[] = ['Skill 1', 'Skill 2'];\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".user-card {\n  &__picture {\n    width: 100%;\n    object-fit: cover;\n  }\n\n  &__container {\n    padding: 16px;\n  }\n\n  &__skills {\n    display: flex;\n    flex-wrap: wrap;\n\n    lib-chip {\n      margin: 4px 4px 4px 0;\n    }\n  }\n}",
+                    "data": ".user-card {\n  display: block;\n  width: 100%;\n  max-width: 300px;\n  min-height: 200px;\n  background-color: #fff;\n  border-radius: 8px;\n  box-shadow: rgb(0 0 0 / 12%) 0px 4px 16px;\n  color: #000;\n  overflow: hidden;\n\n  &__picture {\n    width: 100%;\n    object-fit: cover;\n  }\n\n  &__container {\n    padding: 16px;\n  }\n\n  &__skills {\n    display: flex;\n    flex-wrap: wrap;\n\n    lib-chip {\n      margin: 4px 4px 4px 0;\n    }\n  }\n}",
                     "styleUrl": "./user-card.component.scss"
                 }
             ],
@@ -652,18 +655,20 @@
                 "name": "constructor",
                 "description": "",
                 "args": [],
-                "line": 13
+                "line": 14
             },
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<!-- <lib-card class=\"user-card\">\n  <img class=\"user-card__picture\" [src]=\"picture\" alt=\"user picture\">\n  <div class=\"user-card__container\">\n    <lib-subtitle [subtitle]=\"description\"></lib-subtitle>\n    <lib-title [title]=\"name\"></lib-title>\n    <div class=\"user-card__skills\">\n      <lib-chip *ngFor=\"let skill of skills\" [content]=\"skill\"></lib-chip>\n    </div>\n  </div>\n</lib-card> -->"
+            "templateData": "<div class=\"user-card\">\n  <img class=\"user-card__picture\" [src]=\"picture\" alt=\"user picture\">\n  <div class=\"user-card__container\">\n    <ngx-ds-subtitle [subtitle]=\"description\"></ngx-ds-subtitle>\n    <ngx-ds-title title=\"name\"></ngx-ds-title>\n    <div class=\"user-card__skills\">\n      <ngx-ds-chip *ngFor=\"let skill of skills\" [content]=\"skill\"></ngx-ds-chip>\n    </div>\n  </div>\n</div>"
         },
         {
             "name": "UserListComponent",
-            "id": "component-UserListComponent-15db24e12201afb582ea667292fad86a",
-            "file": "projects/lib-components/src/lib/user-list/user-list.component.ts",
-            "encapsulation": [],
+            "id": "component-UserListComponent-7511d4a5ced90f49b3da04817d0ff038",
+            "file": "projects/lib-components/src/lib/components/user-list/user-list.component.ts",
+            "encapsulation": [
+                "ViewEncapsulation.ShadowDom"
+            ],
             "entryComponents": [],
             "inputs": [],
             "outputs": [],
@@ -681,7 +686,7 @@
                 {
                     "name": "users",
                     "defaultValue": "[\n    {\n      picture: 'https://bit.ly/3cYrq6a',\n      name: 'Brendan EICH',\n      description: 'Créateur de JavaScript',\n      skills: [\n        'Compétence 1',\n        'Compétence 2',\n      ]\n    },\n    {\n      picture: 'https://bit.ly/3mvgzDM',\n      name: 'Yan ZHU',\n      description: 'Brave’s Chief Information Security Officer',\n      skills: [\n        'Compétence 1',\n        'Compétence 2',\n      ]\n    },\n    {\n      picture: 'https://bit.ly/3muYWEl',\n      name: 'Linus TORVALDS',\n      lastname: 'TORVALDS',\n      description: 'Créateur de Linux et GIT',\n      skills: [\n        'Compétence 1',\n        'Compétence 2',\n      ]\n    },\n  ]",
-                    "line": 10,
+                    "line": 11,
                     "type": "any[]"
                 }
             ],
@@ -694,7 +699,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 43
+                    "line": 44
                 }
             ],
             "hostBindings": [],
@@ -702,11 +707,11 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'lib-user-list',\n  templateUrl: './user-list.component.html',\n  styleUrls: ['./user-list.component.scss']\n})\nexport class UserListComponent implements OnInit {\n\n  @Input() users: any[] = [\n    {\n      picture: 'https://bit.ly/3cYrq6a',\n      name: 'Brendan EICH',\n      description: 'Créateur de JavaScript',\n      skills: [\n        'Compétence 1',\n        'Compétence 2',\n      ]\n    },\n    {\n      picture: 'https://bit.ly/3mvgzDM',\n      name: 'Yan ZHU',\n      description: 'Brave’s Chief Information Security Officer',\n      skills: [\n        'Compétence 1',\n        'Compétence 2',\n      ]\n    },\n    {\n      picture: 'https://bit.ly/3muYWEl',\n      name: 'Linus TORVALDS',\n      lastname: 'TORVALDS',\n      description: 'Créateur de Linux et GIT',\n      skills: [\n        'Compétence 1',\n        'Compétence 2',\n      ]\n    },\n  ];\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "sourceCode": "import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';\n\n@Component({\n  selector: 'lib-user-list',\n  templateUrl: './user-list.component.html',\n  styleUrls: ['./user-list.component.scss'],\n  encapsulation: ViewEncapsulation.ShadowDom\n})\nexport class UserListComponent implements OnInit {\n\n  @Input() users: any[] = [\n    {\n      picture: 'https://bit.ly/3cYrq6a',\n      name: 'Brendan EICH',\n      description: 'Créateur de JavaScript',\n      skills: [\n        'Compétence 1',\n        'Compétence 2',\n      ]\n    },\n    {\n      picture: 'https://bit.ly/3mvgzDM',\n      name: 'Yan ZHU',\n      description: 'Brave’s Chief Information Security Officer',\n      skills: [\n        'Compétence 1',\n        'Compétence 2',\n      ]\n    },\n    {\n      picture: 'https://bit.ly/3muYWEl',\n      name: 'Linus TORVALDS',\n      lastname: 'TORVALDS',\n      description: 'Créateur de Linux et GIT',\n      skills: [\n        'Compétence 1',\n        'Compétence 2',\n      ]\n    },\n  ];\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".user-list {\n  lib-user-card {\n    margin: 16px;\n  }\n}",
+                    "data": ".user-list {\n  lib-user-card, ngx-ds-user-card {\n    margin: 16px;\n  }\n}",
                     "styleUrl": "./user-list.component.scss"
                 }
             ],
@@ -715,12 +720,12 @@
                 "name": "constructor",
                 "description": "",
                 "args": [],
-                "line": 39
+                "line": 40
             },
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<div class=\"user-list\">\n  <lib-user-card\n    *ngFor=\"let user of users\"\n    [picture]=\"user.picture\"\n    [name]=\"user.name\"\n    [description]=\"user.description\"\n    [skills]=\"user.skills\"\n  ></lib-user-card>\n</div>"
+            "templateData": "<div class=\"user-list\">\n  \n  <h3>test variables</h3>\n  users[0].name -> \n  {{ users[0].name }}\n\n  <div *ngFor=\"let toto of users; let i = index\">\n    Index: {{i}}\n  </div>\n\n  <h3>User list</h3>\n  <ngx-ds-user-card\n    *ngFor=\"let user of users\"\n    [picture]=\"user.picture\"\n    [name]=\"user.name\"\n    [description]=\"user.description\"\n    [skills]=\"user.skills\"\n  ></ngx-ds-user-card>\n\n  <h1>ngx-ds-user-card</h1>\n  <ngx-ds-user-card></ngx-ds-user-card>\n\n  <h2>lib-user-card</h2>\n  <lib-user-card></lib-user-card>\n</div>"
         }
     ],
     "modules": [
@@ -840,31 +845,20 @@
                 },
                 {
                     "type": "declarations",
-                    "elements": [
-                        {
-                            "name": "LibComponentsComponent"
-                        },
-                        {
-                            "name": "UserCardComponent"
-                        },
-                        {
-                            "name": "UserListComponent"
-                        }
-                    ]
+                    "elements": []
                 },
                 {
                     "type": "imports",
-                    "elements": [
-                        {
-                            "name": "LibElementsModule"
-                        }
-                    ]
+                    "elements": []
                 },
                 {
                     "type": "exports",
                     "elements": [
                         {
-                            "name": "LibComponentsComponent"
+                            "name": "UserCardModule"
+                        },
+                        {
+                            "name": "UserListModule"
                         }
                     ]
                 },
@@ -993,10 +987,96 @@
                     "elements": []
                 }
             ]
+        },
+        {
+            "name": "UserCardModule",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "UserCardComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "UserCardComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "UserListModule",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "UserListComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": [
+                        {
+                            "name": "UserCardModule"
+                        }
+                    ]
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "UserListComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
         }
     ],
     "miscellaneous": {
         "variables": [
+            {
+                "name": "BrendanEich",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/UserCard.stories.ts",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
             {
                 "name": "context",
                 "ctype": "miscellaneous",
@@ -1009,7 +1089,7 @@
                 "name": "context",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/lib-elements/src/test.ts",
+                "file": "projects/lib-components/src/test.ts",
                 "type": "",
                 "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
             },
@@ -1017,7 +1097,7 @@
                 "name": "context",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/lib-components/src/test.ts",
+                "file": "projects/lib-elements/src/test.ts",
                 "type": "",
                 "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
             },
@@ -1046,10 +1126,26 @@
                 "defaultValue": "Template.bind({})"
             },
             {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/UserList.stories.ts",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
                 "name": "DefaultCard",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/stories/Card.stories.ts",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "DefaultCard",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/UserCard.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -1110,6 +1206,14 @@
                 "defaultValue": "Template.bind({})"
             },
             {
+                "name": "OneUser",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/UserList.stories.ts",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
                 "name": "Primary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -1128,14 +1232,14 @@
                 "name": "require",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/lib-elements/src/test.ts",
+                "file": "projects/lib-components/src/test.ts",
                 "type": "literal type"
             },
             {
                 "name": "require",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/lib-components/src/test.ts",
+                "file": "projects/lib-elements/src/test.ts",
                 "type": "literal type"
             },
             {
@@ -1158,17 +1262,17 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/Card.stories.ts",
-                "type": "Story<CardComponent>",
-                "defaultValue": "(args) => ({\n    props: args\n})"
+                "file": "src/stories/Button.stories.ts",
+                "type": "Story<Button>",
+                "defaultValue": "(args: Button) => ({\n  props: args,\n})"
             },
             {
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/Button.stories.ts",
-                "type": "Story<Button>",
-                "defaultValue": "(args: Button) => ({\n  props: args,\n})"
+                "file": "src/stories/Card.stories.ts",
+                "type": "Story<CardComponent>",
+                "defaultValue": "(args) => ({\n    props: args\n})"
             },
             {
                 "name": "Template",
@@ -1198,6 +1302,14 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/stories/Page.stories.ts",
+                "type": "Story<Page>",
+                "defaultValue": "(args: Page) => ({\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/stories/Title.stories.ts",
                 "type": "Story<TitleComponent>",
                 "defaultValue": "(args) => ({\n    props: args\n})"
@@ -1206,15 +1318,49 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/Page.stories.ts",
-                "type": "Story<Page>",
-                "defaultValue": "(args: Page) => ({\n  props: args,\n})"
+                "file": "src/stories/UserCard.stories.ts",
+                "type": "Story<UserCardComponent>",
+                "defaultValue": "(args) => ({\n    props: args\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/UserList.stories.ts",
+                "type": "Story<UserListComponent>",
+                "defaultValue": "(args) => ({\n    props: args,\n    moduleMetadata: {\n      declarations: [ UserListComponent, UserCardComponent ]\n    }\n})"
             }
         ],
         "functions": [],
         "typealiases": [],
         "enumerations": [],
         "groupedVariables": {
+            "src/stories/UserCard.stories.ts": [
+                {
+                    "name": "BrendanEich",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/UserCard.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "DefaultCard",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/UserCard.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/UserCard.stories.ts",
+                    "type": "Story<UserCardComponent>",
+                    "defaultValue": "(args) => ({\n    props: args\n})"
+                }
+            ],
             "projects/compiler/src/test.ts": [
                 {
                     "name": "context",
@@ -1232,23 +1378,6 @@
                     "type": "literal type"
                 }
             ],
-            "projects/lib-elements/src/test.ts": [
-                {
-                    "name": "context",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/lib-elements/src/test.ts",
-                    "type": "",
-                    "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
-                },
-                {
-                    "name": "require",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/lib-elements/src/test.ts",
-                    "type": "literal type"
-                }
-            ],
             "projects/lib-components/src/test.ts": [
                 {
                     "name": "context",
@@ -1263,6 +1392,23 @@
                     "ctype": "miscellaneous",
                     "subtype": "variable",
                     "file": "projects/lib-components/src/test.ts",
+                    "type": "literal type"
+                }
+            ],
+            "projects/lib-elements/src/test.ts": [
+                {
+                    "name": "context",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/lib-elements/src/test.ts",
+                    "type": "",
+                    "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
+                },
+                {
+                    "name": "require",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/lib-elements/src/test.ts",
                     "type": "literal type"
                 }
             ],
@@ -1318,6 +1464,32 @@
                     "file": "src/stories/Title.stories.ts",
                     "type": "Story<TitleComponent>",
                     "defaultValue": "(args) => ({\n    props: args\n})"
+                }
+            ],
+            "src/stories/UserList.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/UserList.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "OneUser",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/UserList.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/UserList.stories.ts",
+                    "type": "Story<UserListComponent>",
+                    "defaultValue": "(args) => ({\n    props: args,\n    moduleMetadata: {\n      declarations: [ UserListComponent, UserCardComponent ]\n    }\n})"
                 }
             ],
             "src/stories/Card.stories.ts": [
@@ -1459,7 +1631,7 @@
     },
     "routes": [],
     "coverage": {
-        "count": 2,
+        "count": 1,
         "status": "low",
         "files": [
             {
@@ -1503,25 +1675,16 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/lib-components/src/lib/lib-components.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "LibComponentsComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/3",
-                "status": "low"
-            },
-            {
-                "filePath": "projects/lib-components/src/lib/lib-components.service.ts",
-                "type": "injectable",
-                "linktype": "injectable",
-                "name": "LibComponentsService",
+                "filePath": "projects/lib-components/src/lib/classes/custom-element-module.ts",
+                "type": "class",
+                "linktype": "classe",
+                "name": "CustomElementModule",
                 "coveragePercent": 0,
                 "coverageCount": "0/2",
                 "status": "low"
             },
             {
-                "filePath": "projects/lib-components/src/lib/user-card/user-card.component.ts",
+                "filePath": "projects/lib-components/src/lib/components/user-card/user-card.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "UserCardComponent",
@@ -1530,7 +1693,7 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/lib-components/src/lib/user-list/user-list.component.ts",
+                "filePath": "projects/lib-components/src/lib/components/user-list/user-list.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "UserListComponent",
@@ -1805,6 +1968,66 @@
             },
             {
                 "filePath": "src/stories/Title.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/UserCard.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "BrendanEich",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/UserCard.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "DefaultCard",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/UserCard.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/UserList.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/UserList.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "OneUser",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/UserList.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
