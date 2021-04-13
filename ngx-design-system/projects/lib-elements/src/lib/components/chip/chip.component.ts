@@ -1,9 +1,10 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'lib-chip',
   templateUrl: './chip.component.html',
-  styleUrls: ['./chip.component.scss']
+  styleUrls: ['./chip.component.scss'],
+  encapsulation: ViewEncapsulation.ShadowDom
 })
 export class ChipComponent implements OnInit {
 

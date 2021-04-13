@@ -1,6 +1,6 @@
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { Meta, moduleMetadata, Story } from '@storybook/angular';
 import { UserListComponent, UserCardComponent } from 'projects/lib-components/src/public-api';
-import { CardComponent, ChipComponent, SubtitleComponent, TitleComponent } from 'projects/lib-elements/src/public-api';
 import * as UserCardStories from './UserCard.stories';
 
 
@@ -12,13 +12,7 @@ export default {
     subcomponents: { UserCardComponent },
     decorators: [
       moduleMetadata({
-        declarations: [
-          UserCardComponent,
-          CardComponent,
-          SubtitleComponent,
-          TitleComponent,
-          ChipComponent
-        ]
+        schemas: [CUSTOM_ELEMENTS_SCHEMA]
       })
     ]
 } as Meta;

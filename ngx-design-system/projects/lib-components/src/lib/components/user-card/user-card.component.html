@@ -1,0 +1,10 @@
+<div class="user-card">
+  <img class="user-card__picture" [src]="picture" alt="user picture">
+  <div class="user-card__container">
+    <ngx-ds-subtitle [subtitle]="description"></ngx-ds-subtitle>
+    <ngx-ds-title title="name"></ngx-ds-title>
+    <div class="user-card__skills">
+      <ngx-ds-chip *ngFor="let skill of skills" [content]="skill"></ngx-ds-chip>
+    </div>
+  </div>
+</div>

@@ -1,6 +1,7 @@
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { Meta, moduleMetadata, Story } from '@storybook/angular';
 import { UserCardComponent } from 'projects/lib-components/src/public-api';
-import { CardComponent, ChipComponent, TitleComponent, SubtitleComponent } from 'projects/lib-elements/src/public-api';
+import { ChipComponent, TitleComponent, SubtitleComponent } from 'projects/lib-elements/src/public-api';
 
 
 // This default export determines where the story goes in the story list
@@ -8,19 +9,13 @@ export default {
     title: 'Components/UserCardComponent',
     component: UserCardComponent,
     subcomponents: { 
-      CardComponent,
       SubtitleComponent,
       TitleComponent,
       ChipComponent
     },
     decorators: [
         moduleMetadata({
-          declarations: [
-            CardComponent,
-            SubtitleComponent,
-            TitleComponent,
-            ChipComponent
-          ]
+          schemas: [CUSTOM_ELEMENTS_SCHEMA]
         })
       ]
 } as Meta;

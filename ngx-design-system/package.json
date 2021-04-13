@@ -8,7 +8,7 @@
     "build:lib-components": "ng build --prod --project lib-components",
     "build:lib-elements": "ng build --prod --project lib-elements",
     "build:design-system": "ng build --prod --output-hashing none --project compiler && npm run pack:design-system",
-    "pack:design-system": "cat ./dist/ngx-design-system/{runtime,polyfills,main}.js > dist/ngx-design-system/ngx-design-system.js"
+    "pack:design-system": "cat ./dist/ngx-design-system/*.js > dist/ngx-design-system/ngx-design-system.js"
   },
   "private": true,
   "dependencies": {

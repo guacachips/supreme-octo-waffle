@@ -1,28 +1,19 @@
 import { NgModule } from '@angular/core';
-import { LibElementsComponent } from './lib-elements.component';
-import { SubtitleComponent } from './subtitle/subtitle.component';
-import { TitleComponent } from './title/title.component';
-import { ChipComponent } from './chip/chip.component';
-import { CardComponent } from './card/card.component';
+import { CardModule } from './components/card/card.module';
+import { ChipModule } from './components/chip/chip.module';
+import { SubtitleModule } from './components/subtitle/subtitle.module';
+import { TitleModule } from './components/title/title.module';
 
 
 
 @NgModule({
-  declarations: [
-    LibElementsComponent,
-    SubtitleComponent,
-    TitleComponent,
-    ChipComponent,
-    CardComponent
-  ],
   imports: [
   ],
   exports: [
-    LibElementsComponent,
-    SubtitleComponent,
-    TitleComponent,
-    ChipComponent,
-    CardComponent
+    TitleModule,
+    SubtitleModule,
+    ChipModule,
+    CardModule
   ]
 })
 export class LibElementsModule { }
